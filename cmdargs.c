@@ -8,14 +8,20 @@ int main(int argc, char *argv[], char *envp[])
 {
 	int i;
 	printf("Количество аргументов: %d\n\n", argc);
-	for(i=0; i<argc; i++) {
-		printf("Аргумент %d: %s\n", i, argv[i]);
+	if  (argc<1){
+		printf("Ошбика \n");
+		exit(-1);
 	}
-	printf("\n");
-	i=0;
-	while (envp[i]!=NULL) {
-		printf("%s\n", envp[i]);
-		i++;
+	else if (argc==1){
+		while (envp[i]!=NULL) {
+			printf("%s\n", envp[i]);
+			i++;
+		}
+	}
+	else{
+		for(i=0; i<argc; i++) {
+		printf("Аргумент %d: %s\n", i, argv[i]);
+		}
 	}
 	return 0;
 }
