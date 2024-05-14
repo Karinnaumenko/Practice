@@ -6,20 +6,22 @@
 
 int main() 
 {
-	int semid;
-	char pathname[] = "forftok.ipc";
-	key_t key;
+	int semid; //Индентификатор ipc дя массива семафоров
+	char pathname[] = "forftok.ipc"; //Файл, используемый для генерации ipc - ключа
+	key_t key; //ipc - ключ
 	struct sembuf mybuf;
 	if((key = ftok(pathname, 0)) <0)
 	{
 		printf("Не удалось сгенерирвоать ipc - ключ\n");
 		exit(-1);
 	}
+	//Получение доступа к массиуву семафоров по ипс ключу
 	if((semid = semget(key, 1, 0666 | IPC_CREAT)) <0)
 	{
 		printf("Не удалось получить доступ к массиву семафоров\n");
 		exit(-1);
 	}
+	//Заполняем структуру майбаф
 	mybuf.sem_op = 1;
 	mybuf.sem_flg = 0;
 	mybuf.sem_num = 0;
