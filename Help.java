@@ -3,12 +3,17 @@ class Help
 	public static void main(String args[])
 		throws java.io.IOException
 		{
-			char choice;
-			System.out.println("Справочная система:");
-			System.out.println(" 1. if");
-			System.out.println(" 2. switch");
-			System.out.println("Выберите подраздел: ");
-			choice = (char) System.in.read();
+			char choice, ignore;
+			do {
+				System.out.println("Справочная система:");
+				System.out.println(" 1. if");
+				System.out.println(" 2. switch");
+				System.out.println("Выберите подраздел: ");
+				choice = (char) System.in.read();
+				do {
+					ignore = (char) System.in.read();
+				} while (ignore !='\n');
+			} while (choice < '1' | choice > '2');
 			System.out.println("\n");
 			switch (choice)
 			{
