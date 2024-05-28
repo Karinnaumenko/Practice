@@ -8,6 +8,14 @@ class Avto
 	void range() 
 	{
 		System.out.println("Автомобиль проедет " + vfuel/rash*100 + "км. на полном баке");
+	}
+	double range2() 
+	{
+		return vfuel/rash*100;
+	}
+	double fuel(int range) 
+	{
+		return rash*(range/100);
 	}	
 }
 class Obj1
@@ -44,6 +52,8 @@ class Obj1
                 System.out.println("Ёмкость топливного бака: " + bmw.vfuel);
                 System.out.println("Тип кузова: " + bmw.type);
                 bmw.range();
+		System.out.println("BMW проедет на полном баке " + bmw.range2() + "км.");
+		System.out.println("BMW проедет 100 км., истратив " + bmw.fuel(100) + "литров");
 
 
 
