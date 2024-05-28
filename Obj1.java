@@ -34,6 +34,18 @@ class Obj1
 		System.out.println("Ёмкость топливного бака: " + nissan.vfuel);
 		System.out.println("Тип кузова: " + nissan.type);
 		nissan.range();
+		System.out.println("Информация об автомобиле \"Форд\"");
+                System.out.println("Количество пассажиров: " + ford.kpass);
+                System.out.println("Ёмкость топливного бака: " + ford.vfuel);
+                System.out.println("Тип кузова: " + ford.type);
+                ford.range();
+		System.out.println("Информация об автомобиле \"BMW\"");
+                System.out.println("Количество пассажиров: " + bmw.kpass);
+                System.out.println("Ёмкость топливного бака: " + bmw.vfuel);
+                System.out.println("Тип кузова: " + bmw.type);
+                bmw.range();
+
+
 
 	}	
 }
