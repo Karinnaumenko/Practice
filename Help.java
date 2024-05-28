@@ -20,7 +20,7 @@ class Help
 				do {
 					ignore = (char) System.in.read();
 				} while (ignore !='\n');
-			} while (choice < '1' | choice > '5' & choice != 'q');
+			} while (choice < '1' | choice > '7' & choice != 'q');
 			if(choice == 'q') break;
 			System.out.println("\n");
 			switch (choice)
