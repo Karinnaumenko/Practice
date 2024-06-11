@@ -1,0 +1,94 @@
+11 Создание абстрактного класса 
+abst ract cla ss TwoDShape { �--- Класс TwoDShape теперь абстрактный 
+private douЫe width; 
+private douЫe height ; 
+private St ring name ; 
+11 Конструктор no умолчанию 
+TwoDShape () { 
+width = height = О.О ; 
+name = " none " ; 
+11 Параметризированный конструктор 
+TwoDShape ( douЫe w, douЫe h, St r ing n) { 
+width = w; 
+height = h; 
+name = n ; 
+11 Создание объекта с одинаковыми значениями 
+11 переменных экземпл яра width и hei ght 
+TwoDShape ( douЫe х, String n) { 
+width = height = х; 
+name = n; 
+11 Создание одного объекта на основе другого 
+TwoDShape ( Two DShape оЬ ) 
+width = ob . width; 
+height = ob . height ; 
+name = ob . name ; 
+11 Методы доступа к переменным width и height 
+douЫe getWidth () { return width ; ) 
+douЫe getHe i ght () { return height ; ) 
+void s etWidt h ( douЫe w) { width = w; ) 
+void setHeight ( douЫe h) { height = h; 
+String getName () { return name ; ) 
+Глава 7. Наследование 303 
+void showDim () { 
+System . out . println ( "Шиpинa и высота - " + width + " и " + 
+height ) ; 
+/ / Теперь ме тод a rea () абстрактный 
+abst ract douЫe area ( ) ; '4------ Превращение area () 
+в абстрактный метод 
+// Подкласс для представления треуголь ников , 
+11 производный от класса TwoDShape 
+class Triangle extends TwoDShape { 
+private Str ing style; 
+/ / Конструктор по умолчанию 
+Triangle () { 
+supe r ( ) ; 
+style = " none " ; 
+11 Конструктор класса Triangle 
+Triangl e ( St r ing s, douЫe w, douЫe h) { 
+supe r (w, h, " треугольник " ); 
+style = s; 
+/ / Конструктор с одним аргументом для построения треуголь ника 
+Tri angle ( douЫe х) { 
+super (x, " треуголь ник " ); / / вызвать конструктор суперкласса 
+style = " закрашенный"; 
+11 Создание одного объекта на основе другого 
+Triangle ( T r i angle оЬ ) { 
+super ( ob ) ; 11 передача объекта конструктору класса TwoDShape 
+style = ob . style ; 
+douЫe area () { 
+return getWidt h () * getHe i ght () / 2; 
+void showStyle () { 
+System . out . println ( " Tpeyгoль ник " + styl e ) ; 
+11 Подкласс для представления прямоуголь ников , 
+11 производньШ от класса TwoDShape 
+class Rect angle extends TwoDShape { 
+11 Конструктор по умолчанию 
+Re ctangle () { 
+304 Java: руководство для начинающих, 7-е и здание 
+super ( ) ; 
+/ / Конструктор класса Rectang le 
+Rectang l e ( douЫe w, douЫe h) { 
+s uper (w, h, " прямоугольни к" ) ; / / вызвать конструктор суперкласса 
+/ / Создание квадрата 
+Rectangl e ( douЫe х) { 
+super (x, " прямоуголь ник " ) ; // вызвать конструктор суперкласса 
+! / Создание одного объекта на основе другого 
+Rect angle ( Rectangle оЬ ) { 
+s uper ( ob ) ; / / передача объекта конструктору класса TwoDShape 
+boolean isSquare () { 
+i f ( getWidth () == getHe i ght ( ) ) return t rue ; 
+return fa lse; 
+douЫe a rea () { 
+return getWidth () * getHe i ght ( ) ; 
+class Abs Shape { 
+puЫic stat ic void ma i n ( St ring args [ ] ) { 
+TwoDShape shape s [] = new TwoDShape [4] ; 
+shape s [O] new T r iangle ( " контурный " , 
+shape s [l] new Re ctangle ( 1 0 ) ; 
+shape s [2] new Rectangle ( l O, 4 ) ; 
+shape s [З] new Triangle ( 7 . 0 ) ; 
+8. О, 1 2 . о ); 
+for ( int i=O ; i < shape s . l ength; i++ ) { 
+System . out . print ln ( " Oбъeкт - "+ shapes [i] . getName () ); 
+System . out . println ( " Плoщaдь - "+ shape s [i] . area () ); 
+System . out . print ln ( ) ; 
